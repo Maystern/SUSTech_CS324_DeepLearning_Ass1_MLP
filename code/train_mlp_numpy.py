@@ -141,14 +141,7 @@ def plot_acc():
 
 def plot_loss():
     return epochs, train_losses, test_losses
-    plt.clf()
-    plt.plot(epochs, train_losses, label='train_loss')
-    plt.plot(epochs, test_losses, label='test_loss')
-    plt.title('Multi-Layer Perceptron loss')
-    plt.xlabel('epoch')
-    plt.ylabel('loss')
-    plt.legend(loc='upper right')
-    plt.savefig("loss_" + name + ".png")
+
 
 
 def main():
