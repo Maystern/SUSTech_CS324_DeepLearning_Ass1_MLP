@@ -5,7 +5,7 @@ from modules import CrossEntropy
 from sklearn.datasets import make_moons
 from sklearn.model_selection import train_test_split
 from modules import * 
-from torch.utils.tensorboard import SummaryWriter
+# from torch.utils.tensorboard import SummaryWriter
 import matplotlib.pyplot as plt
 
 seed = 0
@@ -61,7 +61,7 @@ def train(dnn_hidden_units, learning_rate, max_steps, eval_freq, batch_size=800,
     test_accs.clear()
     epochs.clear()
 
-    writer = SummaryWriter()
+    # writer = SummaryWriter()
     global name
     # Load your data here
     X, y = make_moons(n_samples=1000, noise=noise, random_state=seed)
@@ -117,10 +117,10 @@ def train(dnn_hidden_units, learning_rate, max_steps, eval_freq, batch_size=800,
             test_accuracy = accuracy(test_predictions, test_labels)
 
 
-            writer.add_scalar('Loss/train', train_loss, step)
-            writer.add_scalar('Accuracy/train', train_accuracy, step)
-            writer.add_scalar('Loss/test', test_loss, step)
-            writer.add_scalar('Accuracy/test', test_accuracy, step)
+            # writer.add_scalar('Loss/train', train_loss, step)
+            # writer.add_scalar('Accuracy/train', train_accuracy, step)
+            # writer.add_scalar('Loss/test', test_loss, step)
+            # writer.add_scalar('Accuracy/test', test_accuracy, step)
 
             train_losses.append(train_loss)
             test_losses.append(test_loss)
@@ -134,7 +134,7 @@ def train(dnn_hidden_units, learning_rate, max_steps, eval_freq, batch_size=800,
 
     print(min(test_losses), max(test_accs))
     print("Training complete!")
-    writer.close()
+    # writer.close()
 
 def plot_acc():
     return epochs, train_accs, test_accs

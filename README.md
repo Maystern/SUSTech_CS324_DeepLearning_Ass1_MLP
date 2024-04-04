@@ -14,7 +14,7 @@ conda activate mlp
 ```
 3. **Install Required Packages**: Install the necessary Python packages, namely numpy, matplotlib, and ipykernel, by running:
 ```
-pip install numpy matplotlib ipykernel
+pip install numpy matplotlib ipykernel scikit-learn
 ```
 4. **Clone the Repository**: Clone the GitHub repository containing the code to your local machine by executing:
 ```
